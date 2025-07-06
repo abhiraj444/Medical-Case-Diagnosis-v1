@@ -8,8 +8,8 @@ body {
 
 @layer base {
   :root {
-    --background: 210 20% 97%; /* #F5F7FA - Soft blue-gray */
-    --foreground: 210 20% 17%; /* #1F2937 - Dark navy */
+    --background: 60 30% 96%; /* Cream color */
+    --foreground: 210 20% 17%;
     --card: 0 0% 100%;
     --card-foreground: 210 20% 17%;
     --popover: 0 0% 100%;
@@ -20,11 +20,11 @@ body {
     --secondary-foreground: 210 20% 17%;
     --muted: 210 15% 92%;
     --muted-foreground: 210 10% 45%;
-    --accent: 200 90% 94%; /* #E0F2FE - Light blue accent */
+    --accent: 200 90% 94%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 210 20% 90%; /* #D9E2EC - Muted gray */
+    --border: 210 20% 90%;
     --input: 210 10% 90%;
     --ring: 210 90% 45%;
     --chart-1: 12 76% 61%;
@@ -32,21 +32,29 @@ body {
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --question: 210 20% 95%; /* Light blue-gray for question */
+    --question: 210 20% 95%;
     --question-foreground: 210 20% 20%;
-    --answer: 120 20% 95%; /* Light green-gray for answer */
+    --answer: 120 20% 95%;
     --answer-foreground: 120 20% 20%;
-    --diagnosis: 270 20% 95%; /* Light purple-gray for diagnosis */
+    --diagnosis: 270 20% 95%;
     --diagnosis-foreground: 270 20% 20%;
-    --reasoning: 30 20% 95%; /* Light orange-gray for reasoning */
+    --reasoning: 30 20% 95%;
     --reasoning-foreground: 30 20% 20%;
+    --sidebar-background: 210 20% 97%;
+    --sidebar-foreground: 210 20% 17%;
+    --sidebar-primary: 210 90% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 90% 94%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 210 90% 45%;
     --radius: 0.5rem;
   }
 
   .dark {
     color-scheme: dark;
-    --background: 210 20% 17%; /* #1E293B - Very dark slate or blue-gray */
-    --foreground: 210 20% 96%; /* #F1F5F9 - Light gray-white */
+    --background: 210 10% 10%; /* Dark gray */
+    --foreground: 210 20% 96%;
     --card: 210 20% 17%;
     --card-foreground: 210 20% 96%;
     --popover: 210 20% 17%;
@@ -57,11 +65,11 @@ body {
     --secondary-foreground: 210 20% 96%;
     --muted: 217 25% 25%;
     --muted-foreground: 215 25% 65%;
-    --accent: 170 60% 50%; /* #2DD4BF - Dim teal */
+    --accent: 170 60% 50%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 210 20% 26%; /* #334155 - Slightly lighter slate */
+    --border: 210 20% 26%;
     --input: 217 25% 25%;
     --ring: 210 90% 60%;
     --chart-1: 220 70% 50%;
@@ -69,14 +77,22 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --question: 210 40% 25%; /* Deeper Blue-Gray */
+    --question: 210 40% 25%;
     --question-foreground: 210 40% 90%;
-    --answer: 140 40% 25%; /* Deeper Green */
+    --answer: 140 40% 25%;
     --answer-foreground: 140 40% 90%;
-    --diagnosis: 270 40% 25%; /* Deeper Purple */
+    --diagnosis: 270 40% 25%;
     --diagnosis-foreground: 270 40% 90%;
-    --reasoning: 40 40% 25%; /* Deeper Gold/Yellow */
+    --reasoning: 40 40% 25%;
     --reasoning-foreground: 40 40% 90%;
+    --sidebar-background: 210 20% 17%;
+    --sidebar-foreground: 210 20% 96%;
+    --sidebar-primary: 210 90% 60%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 170 60% 50%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 210 20% 26%;
+    --sidebar-ring: 210 90% 60%;
   }
 }
 

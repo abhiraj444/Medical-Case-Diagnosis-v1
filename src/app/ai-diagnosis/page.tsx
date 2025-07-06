@@ -297,7 +297,7 @@ export default function AiDiagnosisPage() {
                           <Button
                             variant="destructive"
                             size="icon"
-                            className="absolute top-1 right-1 h-6 w-6"
+                            className="absolute top-1 right-1 h-6 w-6 bg-red-500 text-white hover:bg-red-600"
                             onClick={() => handleRemoveFile(i)}
                           >
                             <X className="h-4 w-4" />
@@ -320,27 +320,20 @@ export default function AiDiagnosisPage() {
           </Card>
         )}
 
-        {isLoading && !results && (
-          <div className="space-y-4">
-            <Card>
-              <CardHeader>
-                <Skeleton className="h-6 w-3/4" />
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Skeleton className="h-4 w-full" />
-                <Skeleton className="h-4 w-5/6" />
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <Skeleton className="h-6 w-3/4" />
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Skeleton className="h-4 w-full" />
-                <Skeleton className="h-4 w-5/6" />
-              </CardContent>
-            </Card>
-          </div>
+        {isLoading && !results && !clinicalAnswer && (
+          <Card className="shadow-lg max-w-2xl mx-auto">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Loader2 className="h-6 w-6 animate-spin text-primary" />
+                Diagnosing in process...
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                Please wait while the AI analyzes the patient data and generates a diagnosis.
+              </p>
+            </CardContent>
+          </Card>
         )}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           <div className="space-y-6">

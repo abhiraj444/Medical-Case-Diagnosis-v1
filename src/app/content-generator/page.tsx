@@ -393,7 +393,7 @@ export default function ContentGeneratorPage() {
                                     <Button
                                       variant="destructive"
                                       size="icon"
-                                      className="absolute top-1 right-1 h-6 w-6"
+                                      className="absolute top-1 right-1 h-6 w-6 bg-red-500 text-white hover:bg-red-600"
                                       onClick={() => handleRemoveImage(i)}
                                     >
                                       <X className="h-4 w-4" />
@@ -433,26 +433,19 @@ export default function ContentGeneratorPage() {
         )}
 
         {isLoading && !result && (
-          <div className="space-y-4">
-            <Card>
-              <CardHeader>
-                <Skeleton className="h-6 w-3/4" />
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Skeleton className="h-4 w-full" />
-                <Skeleton className="h-4 w-5/6" />
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <Skeleton className="h-6 w-3/4" />
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Skeleton className="h-4 w-full" />
-                <Skeleton className="h-4 w-5/6" />
-              </CardContent>
-            </Card>
-          </div>
+          <Card className="shadow-lg max-w-2xl mx-auto">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Loader2 className="h-6 w-6 animate-spin text-primary" />
+                Content is getting generated...
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                Please wait while the AI generates the content.
+              </p>
+            </CardContent>
+          </Card>
         )}
         
         {structuredQuestion && (

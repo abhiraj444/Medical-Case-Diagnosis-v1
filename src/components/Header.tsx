@@ -68,7 +68,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/90 backdrop-blur-sm shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-background shadow-sm">
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
         <Link href="/" className="flex flex-shrink-0 items-center gap-2">
           <BrainCircuit className="h-7 w-7 text-primary" />
@@ -93,7 +93,7 @@ export default function Header() {
 
         {/* Mobile Navigation - Icons only */}
         <nav className="md:hidden flex items-center space-x-4">
-          {navItems.slice(0, 2).map((item) => (
+          {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -109,7 +109,7 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" onClick={toggleTheme}>
+          <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
             {theme === 'light' ? (
               <Sun className="h-5 w-5" />
             ) : (
@@ -133,7 +133,7 @@ export default function Header() {
                     </Avatar>
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56" align="end" forceMount>
+                <DropdownMenuContent className="w-56 bg-popover text-popover-foreground" align="end" forceMount>
                   <DropdownMenuLabel className="font-normal">
                     <div className="flex flex-col space-y-1">
                       <p className="text-sm font-medium leading-none">
@@ -158,50 +158,7 @@ export default function Header() {
             </Button>
           )}
 
-          {/* Mobile Navigation */}
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <SheetClose asChild>
-                <Link href="/" className="flex items-center gap-2 mb-6">
-                  <BrainCircuit className="h-7 w-7 text-primary" />
-                  <span className="text-xl font-bold text-foreground">MediGen</span>
-                </Link>
-              </SheetClose>
-              <nav className="flex flex-col gap-4 hidden md:flex">
-                {navItems.map((item) => (
-                  <SheetClose asChild key={item.href}>
-                    <Link
-                      href={item.href}
-                      className={cn(
-                        "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary",
-                        pathname === item.href && "bg-muted text-primary"
-                      )}
-                    >
-                      {item.icon}
-                      {item.label}
-                    </Link>
-                  </SheetClose>
-                ))}
-                {user && (
-                  <SheetClose asChild>
-                    <Button
-                      variant="ghost"
-                      className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary justify-start"
-                      onClick={handleLogout}
-                    >
-                      <LogOut className="h-4 w-4" />
-                      Log out
-                    </Button>
-                  </SheetClose>
-                )}
-              </nav>
-            </SheetContent>
-          </Sheet>
+          
         </div>
       </div>
     </header>

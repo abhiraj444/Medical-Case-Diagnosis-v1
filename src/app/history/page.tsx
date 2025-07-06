@@ -61,9 +61,19 @@ export default function HistoryPage() {
         </CardHeader>
         <CardContent>
           {loading ? (
-            <div className="flex justify-center p-8">
-              <Loader2 className="h-8 w-8 animate-spin" />
-            </div>
+            <Card className="shadow-lg max-w-2xl mx-auto">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Loader2 className="h-6 w-6 animate-spin text-primary" />
+                  Case is being loaded...
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Please wait while your case history is loaded.
+                </p>
+              </CardContent>
+            </Card>
           ) : cases.length > 0 ? (
             <div className="space-y-4">
               {cases.map((caseItem) => (
